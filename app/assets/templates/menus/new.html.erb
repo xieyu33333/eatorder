@@ -1,0 +1,53 @@
+<form name="New Menu">
+  <fieldset>
+    <legend>
+      创建新菜
+    </legend>
+      <div class="control-group">
+        <label class="control-label">
+          菜名
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="menu[name]"
+                   ng-model="menu.name"
+                   class="text_field"
+                   required>
+          <span ng-show="newMenu.name.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          价格
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="menu[price]"
+                   ng-model="menu.price"
+                   class="text_field"
+                   required>
+          <span ng-show="newMenu.price.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      
+    <div class="form-actions">
+      <button class="btn btn-success" ng-click="save()"
+        ng-disabled="isClean() || newMenu.$invalid">
+        <i class="icon-save"></i> 保存
+      </button>
+      <button ng-click="destroy()"
+              ng-show="menu.id"
+              class="btn btn-danger">
+              <i class="icon-trash"></i> 删除
+      </button>
+      <a href="/menus" class="btn">返回主菜单</a>
+    </div>
+  </fieldset>
+</form>
+

@@ -1,0 +1,40 @@
+<h1>菜单</h1>
+
+<p>
+  <b>Name</b><br>
+  {{menu.name}}
+</p>
+
+<p>
+  <b>Price</b><br>
+  {{menu.price}}
+</p>
+
+<p>
+  <b>Faverate</b><br>
+  {{menu.faverate}}
+</p>
+
+<p>
+  <b>All count</b><br>
+  {{menu.all_count}}
+</p>
+
+<p>
+  <b>Day count</b><br>
+  {{menu.day_count}}
+</p>
+
+<div class="form-actions">
+  <a href="/menus/{{menu.id}}/edit"
+    class="btn btn-primary"><i class="icon-edit"></i>
+    Edit Menu
+  </a>
+  <button ng-click="destroy()" class="btn btn-danger">
+    <i class="icon-trash"></i> Delete
+  </button>
+  <a href="/menus" class="btn">
+    Back to menus
+  </a>
+</div>
+

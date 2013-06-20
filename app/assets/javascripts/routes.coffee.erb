@@ -1,0 +1,34 @@
+root = global ? window
+angular = root.angular
+
+thisApp = angular.module("EatorderClient", ['ngCookies', 'menus']).config(['$routeProvider', '$locationProvider' , 
+($routeProvider, $locationProvider) ->
+  #$locationProvider.hashPrefix('');
+  $locationProvider.html5Mode true
+  $routeProvider.when("/",
+    controller: "WelcomeCtrl"
+    templateUrl: "<%= asset_path('welcome/index.html') %>"
+  ).when("/menus", 
+    controller: MenusIndexCtrl
+    templateUrl: '<%= asset_path("menus/index.html") %>'
+  ).when("/menus/new",
+    controller: MenusCreateCtrl
+    templateUrl: '<%= asset_path("menus/new.html") %>'
+  ).when("/menus/:id",
+    controller: MenusShowCtrl
+    templateUrl: '<%= asset_path("menus/show.html") %>'
+  ).when("/menus/:id/edit",
+    controller: MenusEditCtrl
+    templateUrl: '<%= asset_path("menus/edit.html") %>'
+  )
+  #.when("/users/sign_up",
+  #   controller: SignUpCtrl
+  #   templateUrl: '<%= asset_path("users/sign_up.html") %>'
+  # ).when("/users/sign_in",
+  #   controller: SignInCtrl
+  #   templateUrl: '<%= asset_path("users/sign_in.html") %>'
+  # ).otherwise redirectTo: "/"
+])
+
+root.thisApp = thisApp
+

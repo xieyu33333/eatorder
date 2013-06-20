@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @menu.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @menu.price %>
+</p>
+
+<p>
+  <b>Faverate:</b>
+  <%= @menu.faverate %>
+</p>
+
+<p>
+  <b>All count:</b>
+  <%= @menu.all_count %>
+</p>
+
+<p>
+  <b>Day count:</b>
+  <%= @menu.day_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
