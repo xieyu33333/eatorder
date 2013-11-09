@@ -20,14 +20,19 @@ thisApp = angular.module("EatorderClient", ['ngCookies', 'menus']).config(['$rou
   ).when("/menus/:id/edit",
     controller: MenusEditCtrl
     templateUrl: '<%= asset_path("menus/edit.html") %>'
-  )
-  #.when("/users/sign_up",
-  #   controller: SignUpCtrl
-  #   templateUrl: '<%= asset_path("users/sign_up.html") %>'
-  # ).when("/users/sign_in",
-  #   controller: SignInCtrl
-  #   templateUrl: '<%= asset_path("users/sign_in.html") %>'
-  # ).otherwise redirectTo: "/"
+  ).when("/menus/view",
+    controller: MenusViewCtrl
+    templateUrl: '<%= asset_path("menus/view.html") %>'
+  ).when("/users/sign_up",
+    #controller: SignUpCtrl
+    templateUrl: '<%= asset_path("users/sign_up.html") %>'
+  ).when("/users/sign_in",
+    #controller: SignInCtrl
+    templateUrl: '<%= asset_path("users/sign_in.html") %>'
+  ).when("/users",
+    controller: UsersIndexCtrl
+    templateUrl: '<%= asset_path("users/index.html") %>'
+  ).otherwise redirectTo: "/"
 ])
 
 root.thisApp = thisApp

@@ -1,4 +1,3 @@
-
 root = global ? window
 
 MenusIndexCtrl = ($scope, Menu) ->
@@ -52,8 +51,20 @@ MenusEditCtrl = ($scope, $location, $routeParams, Menu) ->
 
 MenusEditCtrl.$inject = ['$scope', '$location', '$routeParams', 'Menu'];
 
+MenusViewCtrl = ($scope, Menu) ->
+  $scope.menus = Menu.query()
+  # $scope.destroy = ->
+  #   dconfirm = confirm("Are you sure?")
+  #   if dconfirm
+  #     original = @menu
+  #     @menu.destroy ->
+  #       $scope.menus = _.without($scope.menus, original)
+
+MenusViewCtrl.$inject = ['$scope', 'Menu'];
+
 # exports
 root.MenusIndexCtrl  = MenusIndexCtrl
 root.MenusCreateCtrl = MenusCreateCtrl
 root.MenusShowCtrl   = MenusShowCtrl
-root.MenusEditCtrl   = MenusEditCtrl 
+root.MenusEditCtrl   = MenusEditCtrl
+root.MenusViewCtrl   = MenusViewCtrl 

@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-respond_to :json
+#respond_to :json
   # GET /menus
   # GET /menus.json
   def index
@@ -7,6 +7,15 @@ respond_to :json
 
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @menus }
+    end
+  end
+
+  def view
+    @menus = Menu.all
+   # render :layout => false
+    respond_to do |format|
+      render :layout => false
       format.json { render json: @menus }
     end
   end

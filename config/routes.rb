@@ -3,7 +3,13 @@ Eatorder::Application.routes.draw do
 
   devise_for :users
 
-  resources :menus
+  resources :menus do
+    collection do 
+      get 'view'
+    end
+  end
+
+  resources :users
 
 
   get "welcome/index"
